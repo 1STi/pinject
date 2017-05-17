@@ -26,7 +26,7 @@ def find_classes(modules, classes):
         all_classes = set(classes)
     else:
         all_classes = set()
-    for module in _get_explicit_or_default_modules(modules):
+    for module in list(_get_explicit_or_default_modules(modules)):
         # TODO(kurts): how is a module getting to be None??
         if module is not None:
             all_classes |= _find_classes_in_module(module)
